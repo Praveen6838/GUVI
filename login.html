@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="./login.css">
+   <script src="login.js"></script>
+    <title>Register</title>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Register</h1>
+        <p>Kindly fill in this form to register.</p>
+        <label for="username"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="username"
+          id="username"
+          required
+        />
+
+        <label for="email"><b>Email</b></label>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        />
+
+        <label for="pwd"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="pwd"
+          id="pwd"
+          required
+        />
+
+        <label for="pwd-repeat"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="pwd2"
+          id="pwd2"
+          required
+        />
+
+        <button type="submit" class="registerform">Register</button>
+      </div>
+    </form>
+<script src="login.js"></script>
+<script>
+$(" #save").click(function(){
+$.ajax({
+url:  "db.php",
+type:"post",
+data: $("#from").serialize();
+success:function(d){
+alert(d);
+}
+});
+});
+</script>
+</body>
+</html>
